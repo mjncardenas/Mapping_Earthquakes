@@ -32,12 +32,13 @@ L.control.layers(baseMaps).addTo(map);
 // let earth = "https://raw.githubusercontent.com/mjncardenas/Mapping_Earthquakes/master/torontoNeighborhoods.json";
 
 // Grabbing our GeoJSON data
-d3.json(torontoHoods).then(function(data) {
-  console.log(data);
-  L.geoJSON(data).addTo(map);
+// d3.json(torontoHoods).then(function(data) {
+  // console.log(data);
+  // L.geoJSON(data).addTo(map);
 
 // })
 // Retrieve the earthquake GeoJSON data.
-
- 
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
+  // Creating a GeoJSON layer with the retrieved data.
+  L.geoJson(data).addTo(map);
 });
